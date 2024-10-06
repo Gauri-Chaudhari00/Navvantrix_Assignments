@@ -1,1 +1,45 @@
-a
+Descriptive Analysis:
+Loading and Displaying Data-The dataset is loaded using Pandas, and the first few rows are displayed to understand the structure of the data. 
+This dataset includes information such as order ID, order date, customer name, segment, category, sales, profit, etc.
+Summary Statistics:
+The .describe() function provides a summary of key statistical metrics for numerical columns like quantity, discount, profit, and year.
+This satisfies the descriptive analysis requirement, providing insights into the central tendency, spread, and range of the data.
+
+Predictive Analysis:
+Feature Engineering:In this section, profit, quantity, and discount are selected as features (X),
+and shipping_cost is selected as the target variable (y) for the predictive model.
+Model Training and Evaluation:
+A linear regression model is trained on the dataset. The train_test_split function divides the data into training and testing sets.
+The LinearRegression model is fitted on the training data, and predictions are made on the test data. 
+The model's performance is evaluated using the mean squared error (MSE). 
+The calculated MSE value of 2833.38 gives an indication of how well the model fits the data.
+
+Interactive Dashboard:
+Setting Up Dash:
+Dash and its components,including dcc (Dash Core Components) and html,
+are imported to create the layout and interactive elements for the dashboard.
+
+Dashboard Layout:
+The dashboard layout includes:
+
+A title ("Sales Analysis Dashboard").
+A dropdown for filtering by the profit column.
+Three graphs (dcc.Graph), which will be dynamically updated based on the selected dropdown values.
+Callback for Interactivity:
+This callback function updates the graphs (sales-time, sales-category, 
+sales-distribution) based on the selected category-dropdown value. 
+It ensures that the graphs are interactive and cross-filter based on the user's input.
+
+Running the App:
+Finally, the app is executed in inline mode, making the dashboard interactive within the Jupyter Notebook environment.
+
+Short Explaination:
+Descriptive Analysis:
+The dataset is loaded, inspected, and summarized using df.describe(). This gives an overview of the sales data.
+
+Predictive Analysis:
+Linear regression is used to predict shipping_cost based on profit, quantity, and discount. The performance is evaluated using MSE.
+
+Interactive Dashboard:
+A dashboard with interactive filtering is created using Dash and Plotly. It includes dropdown-based filtering and 
+three different types of visualizations (line chart, bar chart, histogram), making it highly interactive.
