@@ -1,0 +1,54 @@
+1.CREATE Operation:
+The create_csv() function writes initial records into a CSV file named sales.csv.
+
+Steps:
+
+It opens a file in write mode ('w') and uses the writer object from the csv module to write data.
+First, a header row is written, which defines the columns: Transaction ID, Product Name, Quantity, and Price.
+Next, a list of tuples containing sample sales data (transaction ID, product name, quantity, and price) is written into the file.
+After running this function, the CSV file is created, and records are inserted successfully.
+Output:
+
+The function confirms with a message: "Records have been created in 'sales.csv'.\n"
+2. READ Operation:
+The read_csv() function reads and displays the records stored in the sales.csv file.
+
+Steps:
+
+It first checks whether the CSV file exists using os.path.exists(). If the file exists, it reads the data using the reader object from the csv module.
+The first row (header) is skipped, and then the remaining rows are printed to the console.
+If the file does not exist, it prints an error message.
+
+['Transaction ID', 'Product Name', 'Quantity', 'Price']
+['1', 'Laptop', '2', '1500']
+['2', 'Headphones', '5', '300']
+['3', 'Phone', '1', '800']
+
+3.UPDATE Operation:
+The update_csv() function modifies an existing record in the CSV file.
+
+Steps:
+
+It first checks if the CSV file exists.
+It reads the data from the CSV file into a pandas DataFrame, which is easier for modifying data.
+The function locates the row where Transaction ID matches the given ID and updates the corresponding fields (Product Name, Quantity, and Price) with the new values.
+After updating the record, the DataFrame is saved back to the CSV file.
+If the file doesn't exist, an error message is shown.
+
+['1', 'Laptop', '2', '1500']
+['2', 'Headset', '6', '350']
+['3', 'Phone', '1', '800']
+
+4. DELETE Operation:
+The delete_csv() function removes a record from the CSV file.
+
+Steps:
+
+It checks if the CSV file exists.
+The data is loaded into a pandas DataFrame.
+The row matching the specified Transaction ID is deleted using filtering, i.e., the DataFrame is re-assigned to exclude that row.
+The updated DataFrame is saved back into the CSV file.
+If the file does not exist, an error message is shown.
+
+['1', 'Laptop', '2', '1500']
+['2', 'Headset', '6', '350']
